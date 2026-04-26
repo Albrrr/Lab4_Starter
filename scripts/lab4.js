@@ -33,7 +33,7 @@ function discountPrices(prices, discount) {
     if(length == 0){
         return false
     }
-    if(!Number.isInteger(discount)){
+    if(!Number.isFinite(discount)){
         return false
     }
     for(let i = 0; i < length; i++) {
