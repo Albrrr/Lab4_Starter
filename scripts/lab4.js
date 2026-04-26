@@ -6,6 +6,9 @@
  * @returns The sum of the two numbers if add is true and false otherwise.
  */
 function sumValues(num1, num2, add) {
+    if(!Number.isInteger(num1) || !Number.isInteger(num2)){
+        return false
+    }
     if (add) {
         let result = 0;
 
@@ -14,7 +17,7 @@ function sumValues(num1, num2, add) {
         return result;
     }
     else {
-        return !add;
+        return add;
     }
 }
 
@@ -27,9 +30,10 @@ function sumValues(num1, num2, add) {
 function discountPrices(prices, discount) {
     const discounted = []
     const length = prices.length;
-    if(!Number.isInteger(discount)){
+    if(length == 0){
         return false
-    } else if(discount < 0 || discount > 1){
+    }
+    if(!Number.isInteger(discount)){
         return false
     }
     for(let i = 0; i < length; i++) {
