@@ -27,6 +27,11 @@ function sumValues(num1, num2, add) {
 function discountPrices(prices, discount) {
     const discounted = []
     const length = prices.length;
+    if(!Number.isInteger(discount)){
+        return false
+    } else if(discount < 0 || discount > 1){
+        return false
+    }
     for(let i = 0; i < length; i++) {
         let discountedPrice = 0
         discountedPrice += prices[i] * (1 - discount);
