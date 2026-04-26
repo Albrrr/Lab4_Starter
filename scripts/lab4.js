@@ -33,6 +33,9 @@ function discountPrices(prices, discount) {
     if(length == 0){
         return false
     }
+    if(!Array.isArray(prices)){
+        return false
+    }
     if(!Number.isFinite(discount)){
         return false
     }
